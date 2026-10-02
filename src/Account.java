@@ -2,7 +2,9 @@
 public class Account {
 
     // INKAPSLING:
-    // private skyddar informationen så Main inte kan ändra den direkt.
+    // Private skyddar informationen så Main inte kan ändra den direkt.
+    //Inkapsling finns i Account.java
+
     private String owner;
     private double balance;
 
@@ -17,18 +19,17 @@ public class Account {
 
 
     // GETTER:
+    // GETTER är ett sätt att få läsa något som är skyddat.
     // Gör att Main kan läsa ägarens namn trots att owner är private.
     public String getOwner() {
         return owner;
     }
-
 
     // GETTER:
     // Gör att Main kan läsa saldot trots att balance är private.
     public double getBalance() {
         return balance;
     }
-
 
     // DEPOSIT:
     // Sätter in pengar genom att öka saldot.

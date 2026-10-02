@@ -11,16 +11,16 @@ public class AccountRegister {
 
 
     // FACTORY:
-    // Den här metoden skapar ett nytt Account.
-    // Därför står "new Account" här och inte i Main.
-    // Det nya kontot läggs sedan till i listan.
+// createAccount skapar ett nytt Account och lägger det i listan.
+// new Account står här eftersom AccountRegister ansvarar för att skapa och spara kontona.
+// Main skickar bara in namn och startsaldo och behöver därför
+// inte skapa Account-objekt själv.
     public void createAccount(String owner, double startBalance) {
 
         Account account = new Account(owner, startBalance);
 
         accounts.add(account);
     }
-
 
     // LISTA ALLA KONTON:
     // Loopen går igenom alla Account som finns i listan.
@@ -32,11 +32,9 @@ public class AccountRegister {
             Account account = accounts.get(i);
 
             System.out.println(
-                    account.getOwner() + ": " + account.getBalance()
-            );
+                    account.getOwner() + ": " + account.getBalance());
         }
     }
-
 
     // HITTA KONTO:
     // Söker igenom listan efter rätt owner.
@@ -47,7 +45,7 @@ public class AccountRegister {
 
             Account account = accounts.get(i);
 
-            if (account.getOwner().equals(owner)) {
+            if (account.getOwner().equalsIgnoreCase(owner)) {
 
                 return account;
             }

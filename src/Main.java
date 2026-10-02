@@ -17,13 +17,16 @@ public class Main {
         int choice = 0;
 
         while (choice != 5) {
+// Lite snyggare utskrift
 
             System.out.println();
+            System.out.println("===== KONTOAPPEN =====");
             System.out.println("1. Skapa konto");
             System.out.println("2. Lista konton");
             System.out.println("3. Sätt in pengar");
             System.out.println("4. Ta ut pengar");
             System.out.println("5. Avsluta");
+            System.out.println("======================");
 
             System.out.print("Välj: ");
             choice = scanner.nextInt();
@@ -45,6 +48,11 @@ public class Main {
                 // Main gör INTE new Account här.
                 // AccountRegister ansvarar för att skapa objektet.
                 register.createAccount(owner, startBalance);
+
+//Snygga till utskriften lite
+
+                System.out.println("Kontot har skapats för " + owner + ".");
+                System.out.println("Startsaldo: " + startBalance + " kr");
             }
 
 
