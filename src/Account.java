@@ -34,7 +34,11 @@ public class Account {
     // DEPOSIT:
     // Sätter in pengar genom att öka saldot.
     public void deposit(double amount) {
-        this.balance = this.balance + amount;
+        if (amount <= 0) {
+            System.out.println("Beloppet måste vara större än 0.");
+        } else {
+            this.balance = this.balance + amount;
+        }
     }
 
 
@@ -42,7 +46,10 @@ public class Account {
     // Kontrollerar först om det finns tillräckligt med pengar.
     public void withdraw(double amount) {
 
-        if (amount > this.balance) {
+        if (amount <= 0) {
+            System.out.println("Beloppet måste vara större än 0.");
+
+        } else if (amount > this.balance) {
 
             // För stort uttag stoppas och saldot ändras inte.
             System.out.println("Uttag medges ej - beloppet är större än saldot.");
