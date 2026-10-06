@@ -19,7 +19,8 @@ public class Account {
 
 
     // GETTER:
-    // GETTER är ett sätt att få läsa något som är skyddat.
+    // GETTER är ett sätt att få läsa något som är skyddat. getOwner() och getBalance()
+    // låter andra delar av programmet läsa informationen.
     // Gör att Main kan läsa ägarens namn trots att owner är private.
     public String getOwner() {
         return owner;
@@ -27,6 +28,7 @@ public class Account {
 
     // GETTER:
     // Gör att Main kan läsa saldot trots att balance är private.
+   // getOwner() och getBalance() låter andra delar av programmet läsa informationen.
     public double getBalance() {
         return balance;
     }
